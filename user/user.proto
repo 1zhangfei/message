@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package user;
+
+option go_package="./user";
+
+message UserInfo {
+    int64   ID       = 10;
+    string  Mobile   = 20;
+    string  Password = 30;
+    string  Nickname = 40;
+}
+
+
+message UserCreateRequest {
+  UserInfo Info = 10;
+}
+
+message UserCreateResponse {
+  UserInfo Info = 10;
+}
+
+
+message GetUserRequest{
+    UserInfo Info = 10;
+}
+
+message GetUserResponse{
+    UserInfo Info = 10;
+}
+
+
+message UpdateUserRequest{
+    UserInfo  Info = 10;
+}
+
+message UpdateUserResponse{
+    UserInfo Info = 10;
+}
+
+
+message SendSmsRequest{
+    string Mobile = 10;
+    string Sms    = 20;
+}
+
+message SendSmsResponse{}
+
+
+service User {
+  rpc UserCreate(UserCreateRequest) returns(UserCreateResponse);
+  rpc GetUser(GetUserRequest) returns(GetUserResponse);
+  rpc UpdateUser(UpdateUserRequest) returns(UpdateUserResponse);
+  rpc SendSms(SendSmsRequest) returns(SendSmsResponse);
+
+}
