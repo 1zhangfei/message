@@ -47,10 +47,19 @@ message SendSmsRequest{
 message SendSmsResponse{}
 
 
+message GetSmsRequest{
+  string Mobile = 10;
+}
+
+message GetSmsResponse{
+  string Sms = 10;
+}
+
+
 service User {
   rpc UserCreate(UserCreateRequest) returns(UserCreateResponse);
   rpc GetUser(GetUserRequest) returns(GetUserResponse);
   rpc UpdateUser(UpdateUserRequest) returns(UpdateUserResponse);
   rpc SendSms(SendSmsRequest) returns(SendSmsResponse);
-
+  rpc GetSms (GetSmsRequest)  returns(GetSmsResponse);
 }
