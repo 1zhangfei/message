@@ -9,6 +9,8 @@ message UserInfo {
     string  Mobile   = 20;
     string  Password = 30;
     string  Nickname = 40;
+    string  Address  = 50;
+    string  Avatar   = 60;
 }
 
 
